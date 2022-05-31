@@ -5,7 +5,6 @@ import com.dao.StatusDao;
 import com.dto.StatusDto;
 import com.entity.Location;
 import com.entity.Status;
-import com.entity.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

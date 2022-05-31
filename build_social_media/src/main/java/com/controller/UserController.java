@@ -44,19 +44,21 @@ public class UserController {
     @PostMapping("/store")
     public String storeUser(Model model, @ModelAttribute("userDto") UserDto userDto){
 
-//        Location location = locationDao.getByName(userDto.getLocation()); // create method locationDao
+        Location location = locationDao.getByName(userDto.getLocation()); // create method locationDao
+        User user = new User();
+        user.setName(userDto.getName());
+        user.setEmail(userDto.getEmail());
+        user.setPassword(userDto.getPassword());
+        user.setLocation(location);
+        userDao.store(user);
+        location.getUserList().add(user);
+        locationDao.update(location);
+        model.addAttribute("user",user);
+
 //        User user = new User();
-//        user.setName(userDto.getName());
-//        user.setEmail(userDto.getEmail());
-//        user.setPassword(userDto.getPassword());
-//        user.setLocation(location);
+//        BeanUtils.copyProperties(userDto,user);
 //        userDao.store(user);
 //        model.addAttribute("user",user);
-
-        User user = new User();
-        BeanUtils.copyProperties(userDto,user);
-        userDao.store(user);
-        model.addAttribute("user",user);
         return "user/show";
     }
 

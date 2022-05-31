@@ -34,7 +34,7 @@
                 <td class="td">${user.getName()}</td>
                 <td class="td">${user.getEmail()}</td>
                 <td class="td">${user.getPassword()}</td>
-<%--                <td class="td">${user.getLocation().getLocationName()}</td>--%>
+                <td class="td">${user.getLocation().getLocationName()}</td>
 <%--                <td class="td">${user.getAttachment().getAttachmentPath()}</td>  // userDao ai value expect
                        korbe na pele all value null hisebe jabe--%>
             </tr>

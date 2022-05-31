@@ -3,6 +3,8 @@ package com.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -16,8 +18,8 @@ public class Location {
     @Column(name = "location_name")
     private String locationName;
 
-    @OneToOne(fetch = FetchType.LAZY,mappedBy = "location")
-    private User user;
+    @OneToMany(orphanRemoval = true, mappedBy = "location")//location delete korle all user delete hobe = orphanRemoval
+    private List<User> userList = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "location")
     private Status status;
