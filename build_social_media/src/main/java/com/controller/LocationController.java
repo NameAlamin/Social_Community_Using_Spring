@@ -32,7 +32,7 @@ public class LocationController {
     public String submitForm(Model model){
         LocationDto locationDto = new LocationDto();
         model.addAttribute("locationDto",locationDto);
-        return "/location/create";
+        return "location/create";
     }
 
     @PostMapping("/store")
@@ -45,7 +45,7 @@ public class LocationController {
 
         model.addAttribute("location", location);
 
-        return "/location/show";
+        return "location/show";
     }
 
     @GetMapping("/list")

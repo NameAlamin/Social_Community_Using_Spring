@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>StatusShow</title>
 </head>
 <body>
-Location: ${location.getLocationName()}
+<h1>Status/show save = Success</h1>
 </body>
 </html>

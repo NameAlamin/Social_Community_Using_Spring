@@ -46,5 +46,4 @@ public class Status {
 //    @Column(name = "updated_at")
 //    private Data updatedAt;
 
-
 }
